@@ -1,0 +1,601 @@
+\documentclass[article,chapter,openany,amsmath,gremph,lwarp]{oblivoir}
+
+\usepackage{fapapersize}
+\usefapapersize{210mm,297mm,10mm,60mm,30mm,32mm}
+\usepackage{epsfig}
+\usepackage{physics}
+\usepackage{lipsum}
+\usepackage{marginnote}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tasks}
+                 % Creating Exercises and Solutions
+\usepackage{capt-of}   
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% 이제 문서를 시작.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames,table]{xcolor}
+\usepackage{tikz}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
+\usepackage{amsthm}
+
+
+\mdfdefinestyle{theoremstyle}{%
+linecolor=lightgray,linewidth=2pt,%
+frametitlerule=true,%
+frametitlebackgroundcolor=gray!20,
+innertopmargin=\topskip,
+}
+\mdtheorem[style=theoremstyle]{defn}{Definition}[section]
+
+
+
+\mdfdefinestyle{theoremstyle}{%
+linecolor=lightgray,linewidth=2pt,%
+frametitlerule=true,%
+frametitlebackgroundcolor=gray!20,
+innertopmargin=\topskip,
+}
+\mdtheorem[style=theoremstyle]{task}{Task}[section]
+
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem{rem}{Remark}
+\newtheorem{exam}{Example}[section]
+
+
+
+\ifPDFTeX
+	\usepackage{mathpazo}
+\else\ifLuaOrXeTeX
+	\setmainfont{TeX Gyre Pagella}
+ 	\setsansfont[Scale=.95]{TeX Gyre Heros}
+%% \setkomain/sansfont : see oblivoir-simpledoc.
+	\setkomainfont(HCRBatangLVT)(*-Bold)(UnGraphic)
+	\setkosansfont[NanumGothic]()[](HCRDotumLVT)
+%% 수학 폰트
+%	\usepackage{unicode-math}
+%	\setmathfont{Asana-Math.otf}
+\fi\fi
+
+\ifLuaTeX
+\def\interHANGUL{InterHangul}
+\else\ifXeTeX
+\def\interHANGUL{interhchar}
+\fi\fi
+
+%% logos
+\usepackage{kotex-logo}
+%% index for \koTeX
+%\let\ORIGkoTeX \koTeX
+%\def\koTeX{\ORIGkoTeX\index{ko.TeX}}
+
+%%% marginfix
+%\usepackage{marginfix}
+
+%% 좌우 마진의 marginpar 위치가 혼선을 보인다면
+%% 다음을 선언한다.
+\strictpagecheck
+
+\usepackage{cite}
+
+
+%\ifPDFTeX
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.pdg,.png,.jpg}
+%\fi
+%% pdf 정보
+\makeatletter
+\if@lwarp
+\usepackage{xcolor}
+\def\epigraph#1#2{#1\quad #2}
+\else
+\usepackage[dvipsnames]{xcolor}
+\hypersetup{%
+    bookmarks=true,%
+    plainpages=false,%
+    colorlinks=true,%
+    pdfauthor={Karnes Kim},%
+    pdfcreator={Karnes Kim}
+}
+\fi
+
+
+
+
+\makeatother
+
+\nonfrenchspacing
+%% nonfrench를 설정하는 경우에는 \xspaceskip도 정해주자.
+%% 여기서는 눈에 띄도록 이 길이를 넉넉하게 잡았음.
+%% 일반적으로 .6 내지 .7 정도를 권장함.
+\xspaceskip=.8em plus .1em minus .1em
+
+%% 이 아래 명령들은 본문에서 바꿀 수 있다.
+%% 행간설정. 두번째 인자는 fn/float에 적용되는 행간.
+\SetHangulspace{1.5}{1.1}
+%% quotespacing을 설정함. \noadjustqutespacing이 default. \adjustquotespacing
+%\adjustquotespacing
+%% float/fn의 좁은 행간 설정을 disable. \adjustfloatfnspacing
+\noadjustfloatfnspacing
+
+%% snugshade 환경에 칠할 배경색.
+\definecolor{shadecolor}{gray}{0.85}
+
+
+%%% from memman.tex. modified.
+%% 본문에서 한 번 사용하기 위해 설정한 chapter
+%% style 예제. 이 예제는 memman에 있다.
+%% 한글판을 위하여 조금 수정함.
+\makeatletter
+\newlength{\numberheight}
+\newlength{\barlength}
+\makechapterstyle{veelo}{%
+   \setlength{\beforechapskip}{40pt}
+   \setlength{\midchapskip}{25pt}
+   \setlength{\afterchapskip}{40pt}
+   \renewcommand{\chapnamefont}{\normalfont\LARGE\flushright}
+   \renewcommand{\chapnumfont}{\normalfont\HUGE}
+   \renewcommand{\chaptitlefont}{\normalfont\HUGE\bfseries\flushright}
+   \renewcommand{\printchaptername}{}%
+   \renewcommand{\prechapternum}{% <= 이 명령을 정의. 
+            \chapnamefont\MakeUppercase{chapter}}
+   \renewcommand{\postchapternum}{}% <= 이 명령을 정의. 여기서는 비움.
+   \renewcommand{\chapternamenum}{}
+   \setlength{\numberheight}{18mm}
+   \setlength{\barlength}{\paperwidth}
+   \addtolength{\barlength}{-\textwidth}
+   \addtolength{\barlength}{-\spinemargin}
+   \renewcommand{\printchapternum}{%
+      \makebox[0pt][l]{% 
+      \hspace{.8em}%
+      \resizebox{!}{\numberheight}{\chapnumfont \thechapter}% 
+      \hspace{.8em}%
+      \rule{\barlength}{\numberheight}
+     }
+   }
+   \makeoddfoot{plain}{}{}{\thepage}
+}
+
+\makechapterstyle{mycompanion}{%
+  \chapterstyle{default}
+  \renewcommand*{\chapnamefont}{\normalfont\LARGE\scshape}
+  \renewcommand*{\printchaptername}{\raggedleft\chapnamefont \@chapapp}
+  \renewcommand*{\prechapternum}{\raggedleft\chapnamefont \pre@chapter}
+  \renewcommand*{\chapnumfont}{\normalfont\Huge}
+  \setlength{\chapindent}{\marginparsep}
+  \renewcommand*{\printchaptertitle}[1]{%
+    \begin{adjustwidth}{}{-\chapindent}
+      \raggedleft \chaptitlefont ##1\par\nobreak
+    \end{adjustwidth}}} 
+
+\makeatother 
+
+%%% User's commands
+%% 사용자 명령들. 인덱스 관련 명령.
+\newcommand\dispcmd[1]{%
+    \texttt{\textbackslash #1}%
+    \index{명령!\textbackslash #1}%
+    \index{#1@\textbackslash #1}%
+}
+
+\newcommand\cls[1]{%
+    \texttt{#1}\ 클래스%
+    \index{클래스!#1}%
+    \index{#1~클래스}%
+}
+
+\newcommand\pkg[1]{%
+    \texttt{#1}\ 패키지%
+    \index{패키지!#1}%
+    \index{#1~패키지}%
+}
+
+\newcommand\thisclass{%
+    \texttt{memoir}\ 클래스%
+    \index{클래스!memoir}%
+    \index{memoir~클래스}%
+}
+
+\newcommand\env[1]{%
+    \textsf{#1} 환경%
+    \index{환경!#1}%
+    \index{#1~환경}%
+}
+
+\newcommand\wi[2][\empty]{%
+    \ifx#1\empty
+        \index{#2}#2%
+    \else
+        \index{#1!#2}#2%
+    \fi
+}
+
+
+
+
+
+%% showcommand/showenv 명령.
+%% 만약 command/env 보여주기를 끄려면
+%% \showcommandfalse를 선언한다.
+\makeatletter
+\newif\if@showcommand\@showcommandtrue
+\newcommand\showcommandtrue{\@showcommandtrue}
+\newcommand\showcommandfalse{\@showcommandfalse}
+
+\strictpagechecktrue
+
+\newcommand\showcommand[1]{%
+	\if@showcommand
+	 \checkoddpage\ifoddpage
+      \marginpar{\small\texttt{\textbackslash #1}}%
+   \else
+      \marginpar{\hfill\small\texttt{\textbackslash #1}}%
+   \fi
+	\fi
+}
+
+\newcommand\showenv[1]{%
+	\if@showcommand
+	 \checkoddpage\ifoddpage
+    \marginpar{\small\textit{#1}(env.)}%
+   \else
+    \marginpar{\hfill\small\textit{#1}(env.)}%
+   \fi
+	\fi
+}
+\makeatother
+
+%% MakeShortVerb
+\MakeShortVerb{\|} 
+% \DeleteShortVerb{\|}
+
+%% 인덱스의 hyperpage 처리를 위해서
+\newcommand\bfhypidx[1]{%
+	\textbf{\hyperpage{#1}}%
+}
+
+%% replace \bigskip
+\newcommand\alineskip{%
+	\vspace{\onelineskip}%
+}
+
+%% showindexmark
+%% 여백을 충분히 확보하고 다음 행을
+%% 활성화해볼 것.
+%\showindexmarktrue
+
+%% index를 만든다. 
+\makeindex
+
+%% newlist
+%% 새로운 리스트를 만드는 것이 정말 너무나 간단하다.
+\newcommand\queryfont{\raggedleft\sffamily\small}
+\newcommand\listofqueriesname{Queries~목록}
+\newlistof{listofqueries}{loq}{\listofqueriesname}
+\newlistentry{query}{loq}{0}
+\newcommand{\query}[2][\empty]{%
+	\refstepcounter{query}
+	\par\noindent\fbox{Q?}~\begingroup\queryfont #2\endgroup%
+	\addcontentsline{loq}{query}{\protect\numberline{\thequery}#2}\par
+	\ifx#1\empty\else\index{Query!#1}\fi
+}
+
+%% title page
+\newcommand\MakeTitle{%
+ \begin{titlingpage}
+ \setcounter{page}{-1}%
+ \newlength\tmplen\setlength\tmplen{\textwidth}\addtolength\tmplen{40mm}
+   \begin{minipage}{\tmplen}
+   \begin{center}
+     \LARGE\bfseries\thetitle \\ \vskip\onelineskip
+     \normalfont\normalsize\theauthor
+   \end{center}
+   \vspace*{100mm}
+ \end{minipage}
+  \end{titlingpage}
+}
+
+%% 각주. footmisc는 memoir와 함께 쓸 수 있다.
+%% 참고. [bottom] footnote를 위해서라면 
+%% 다음과 같이 할 것을 권장함. raggedbottom에서 동작함.
+%\renewcommand*{\footnoterule}{\kern-3pt\vfill
+%    \hrule width 0.4\columnwidth \kern 2.6pt}
+%% 각주를 floats 아래 두는 memoir 명령.
+\feetbelowfloat
+
+%% 밑줄.
+\ifLuaTeX\else
+\usepackage[normalem]{ulem}
+\fi
+
+%% 사소한 설정
+\def\util#1{\texttt{#1}\index{Utility!#1}}
+
+
+
+
+\newenvironment{exper}[1]
+  {\mdfsetup{
+    roundcorner=5pt,
+    frametitle={\colorbox{white}{ \space$\langle\langle$#1$\rangle\rangle$ \space}},
+    innertopmargin=10pt,
+    frametitleaboveskip=-\ht\strutbox,
+    frametitlealignment=\center
+    }
+  \begin{mdframed}%
+  }
+  {\end{mdframed}}
+
+%%%
+%\headnamereftrue
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% 이제 문서를 시작.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\title{{물안개(物眼開)}}
+\author{조인환 T}
+
+
+%% 아래 \MakeTitle 명령은 이 문서의 preamble에
+%% 정의되어 있다. 표지 디자인은 이 정의를 참고하여
+%% 수정하여 볼 것.
+\MakeTitle
+\cleardoublepage
+
+\frontmatter
+% ToC, etc
+%% 차례 페이지들. 여기서는 demo chapter style과
+%% Ruled 페이지 스타일을 적용한다.
+\chapterstyle{article}
+
+\tableofcontents
+%\clearpage
+\listoffigures
+%\clearpage
+\listoftables
+%% listofqueries는 \newlistof로 만든
+%% local \listofx임.
+%\clearpage
+\listofqueries
+
+\mainmatter
+
+%% hangul 페이지 스타일을 테스트하기
+%% 위하여 제1편 앞에 한 챕터를 둠. 다만 chapter의 첫 면은
+%% chapter 페이지 스타일을 따른다.
+\chapterstyle{default}
+
+\copypagestyle{part}{empty}
+%%%%%%%%%% Ruled를 사용하되 partmark를 정의함.
+\copypagestyle{MyRuled}{Ruled}
+\newlength{\MyRuledheadwidth}
+\setlength{\MyRuledheadwidth}{\textwidth}
+\addtolength{\MyRuledheadwidth}{\marginparsep}
+\addtolength{\MyRuledheadwidth}{\marginparwidth}
+\makerunningwidth{MyRuled}{\MyRuledheadwidth}
+\makeheadrule{MyRuled}{\MyRuledheadwidth}{\normalrulethickness}
+\makeheadposition{MyRuled}{flushright}{flushleft}{flushright}{flushleft}
+\makeatletter
+\makepsmarks{MyRuled}{%
+  \let\@mkboth\markboth
+  \def\partmark##1{\markboth{\hparttitlehead. ##1}{##1}}
+  \def\chaptermark##1{\markright{\hchaptertitlehead. ##1}}
+  \def\sectionmark##1{}
+}
+\def\partmark#1{\markboth{\hparttitlehead. #1}{#1}}
+\makeatother
+\oblivoirchapterstyle{veelo}
+\pagestyle{MyRuled}
+
+
+\part{뉴턴의 역학법칙}
+\pagestyle{MyRuled}
+
+\chapter{기본 물리량 \\(Fundamental Physical quantity)}
+
+\section{Orientation} 
+\begin{flushleft}
+
+
+이 문서는 충남과학고등학교 1학년 학생들의 물리학 수업을 위하여 제작되었다.
+
+충남과학고의 2023학년도 신입생의 경우 물리학1의 내용을 1학기 동안 배우고 이후 2학기부터 고급물리학과 일반물리학, 물리학 실험을 
+수강하게 된다. 
+
+이 교수학습자료의 필자는 조인환으로 충남 대천출신이다. 공차는 것을 좋아하고 학생들을 가르치고 있다. 새로운 것에 도전하는 것에 흥미를 느끼고 
+많은 사랑을 할 수 있는 사람이 되는 것이 비전이다. \footnote{서로 자기소개하는 시간을 갖자.}\\
+이 자료는 다양한 대학 전공 서적을 인용하고 그 가르침의 깊이가 부끄러울 정도로 짧아 자료의 활용은 충남과학고등학교 학생들에게까지만 제공하고자 한다.
+\\
+\marginpar{
+  \begin{center}
+  \includegraphics[width=4cm]{사진모음/언어.jpg}\captionof{figure}{언어}
+  \end{center}} 
+
+필자가 학생들에게 해주고 싶은 말이 하나 있다. 모든 학문은 그 논리를 펴내가는 언어와 같다는 것이다. 
+따라서 물리학을 배울 때에도 물리학이라는 나라에서 통용되는 언어를 잘 익히고 이를 이용해 소통하고 의미있는 작품들을 만들어가는 것이다. 
+소통이 명확하려면 첫째로는 그 언어의 구성요소를 명확히 알아야 한다. 고등학교 수준의 물리학은 그 언어를 암기하고 배워나가는 과정에
+가깝다. 더 나아가서는 이를 이용해 간단한 대화(문항을 푸는 것)들을 익히게 되는 것이다. 
+이런것들이 차츰 쌓이면 본인만의 다양한 이야기들을 집필할 수 있을것이다. 
+따라서 우리 학생들은 이전에 알고 있던 경험의 언어들과 물리학의 언어를 \textbf{혼동하고 혼용하지 말고 정확하고 격식있게} 대화하기 위해
+물리학 공부를 엄밀히 해주기를 바란다.  
+물리학이 다른 언어들과 다른 점은 다양한 자연현상을 공통의 이유로 축약하여 설명하려 한다는 것이다. 
+자연에 있는 만물의 이치를 알기 위해 우리의 머릿속으로 다양한 현상을 갖고와 물리학 언어의 규칙 속에서
+설명하는 것이 우리가 하는 물리학이 되겠다. 따라서 우리 학생들은 다양한 주변의 현상들을 있는 그대로 받아들이는 한편 그 현상들의 
+불변하는 규칙을 찾으려고 노력한다면 그것이 물리학을 하고 있는것이라고 생각한다.
+
+
+이 문서는 물리학 수업을 처음듣는 신입생 학생들이 올바르게 물리학을 접하기 위하여 오랜기간 제작되었으므로 이를 정독하고 
+궁금한 것들을 인터넷 검색과 교사 질의를 통해 자율적으로 학습하기를 바란다.
+
+
+이 문서에서 다루는 몇가지 구성의 규칙, 특성을 설명하겠다.
+\begin{mdframed}\tightlists
+\begin{itemize}[-]
+ \item 각 \textbf{Chapter}는 물리학의 큰 영역과 범위를 같이 한다.(고전역학,열역학, 상대론, 전자기학, 광학, 파동, 통계물리, 현대물리, 양자 등)
+ \item \textbf{강조하고자 하는 어구는 굵은 글씨로 나타내며}, 이러한 어구는 정확한 뜻을 이해하여야 연속적인 학습을 할 수 있다.
+ \item 그 섹션에서 꼭 알고 넘어가야 하는 물리학의 언어들은 \textbf{Definition}으로 두었다. 
+ \item 생소하거나 설명이 적은 부분이 있다. 각주가 붙은 꼬리말들을 이용하거나 부록에 설명이 있는 경우가 있다. 그럼에도 부족한 물음은 다양한 방법을 이용해 해결해보자. 
+ \item \textbf{Task}는 설명으로만 듣기에는 시원하지 않은 내용들의 예제를 두었다. 잘 풀어보며 비슷한 문항을 만들어보는 등 시험을 대비하여보자.
+ \item 물리학 용어는 다수 영어로 번역하여 가로()에 두었다. 다양한 논문과 원서의 내용을 이해하기 위해 용어들을 잘 알아두자. 각 용어를 아는 것은 각 식의 문자들을 
+ 암기하는데에도 도움이된다.  
+\end{itemize}
+\end{mdframed}
+
+
+
+\section{어떤 물리현상을 다루는가}
+
+과학과 공학은 측정과 Data의 정량적인 비교에 바탕을 두고 있다. 따라서 이들을 다루는 규칙과 단위를 명확히 아는 것은 매우 중요하다. 
+물리학은 연역적\footnote{연역적 추론은 논리학 용어로, 이미 알고 있는 판단을 근거로 새로운 판단을 유도하는 추론이다. 또한 이것은 다른 결론을 배제한다. 반드시 
+한가지 결론이 나야 하는 것으로 A이기 위해서는 B여야 한다고 추론한다.}인 사고로 확장한다. 따라서 가장 재료가 되는 기본 물리량들에 대해서 명확히 알고 이것들을 조합하여
+새로운 물리량들을 정의하는 것에 익숙해져보자.
+
+물리학에 있어 물리량의 측정이란 매우 중요하고 심사숙고해야 하는 과정이다. 
+역사적 과정을 통해 정의되어있는 물리량들의 국제단위계를 알아두고 
+극정밀도를 요구하는 현대사회에서 가장 기본적인 \textbf{시간, 길이, 질량}이 어떻게 정의되었는지 확인해보자. 
+
+\subsection{길이 (length)}
+모든 물리량은 표준과 비교하여 각각 고유한 단위로 측정하게 된다. 예컨데 미터(m)는 길이라는 물리량의 단위이며, 표준은 그것의 1.0을 의미한다. 
+정확한 1.0m의 표준을 정하는 것은 매우 신중해야한다. 왜냐하면 \textbf{수소원자의 길이부터 천체사이의 거리를 정확하게 측정}해주어야 하기 때문이다. 
+1792년 프랑스 공화국이 도량형법을 제정할 때에는 북극점에서 적도까지 거리의 1천만 분의 1로 정의하였지만 실요상의 이유로 폐기하고 백금-이리듐 합금막대에
+새겨진 가는 두 눈금 사이의 길이로 1미터를 정의하였다. 그러나 현대의 과학기술은 미터원기에 새겨져 있는 두 눈금 사이의 길이보다 
+더 정밀한 표준이 필요하게 되었다. 1983년에 미터는 특정한 시간간격 동안 빛이 진행한 길이로서 제 17차 도량형 총회에서 다음과 같이 정의하였다. 
+
+
+
+  \begin{defn}[ 1m ]
+    미터는 1초의 1/299,792,458인 시간간격 동안 빛이 진공 속에서 진행한 경로의 길이이다. 
+  \end{defn}
+
+
+
+\subsection{질량 (mass)}
+질량의 SI 표준은 파리 근교의 국제도량형국에 보관되어 있는 질량 1kg으로 정한 백금-이리듐 원통이다. 이러한 표준원기는 다른 표준원기를
+복제 및 비교하기 위해 움직이고 그 사용이 매우 제한적이다. 이러한 원기가 있더라도 원자의 질량은 원자들 상호간에 비교하는 것이 훨씬 정확하기에 
+탄소-12 원자의 질량을 국제 협약에 따라 \textbf{12 원자질량단위(u)}의 질량으로 정의하였다. 이들 두 표준 사이의 관계는 
+
+
+  \begin{equation}
+    1u=1.66053886\times 10^{-27}kg
+  \end{equation}
+
+이며, 이를 이용하여 다른 원자들의 상대적인 질량을 실험적으로 상당히 정밀하게 결정할 수 있다. 현재는 물리상수인 플랑크 상수 값($h$)을 기준으로 
+질량을 정의한다. 
+\marginpar{
+  \begin{center}
+  \includegraphics[width=4cm]{표준원기.jpg}\captionof{figure}{표준원기}
+  \end{center}} 
+
+
+\subsection{시간 time}
+통상적으로 시간이라하면 두가지의 관점이 있다. \textbf{사건이 언제 일어났는가?}\footnote[1]{시간의 어느 한 시점을 뜻하는 말로 "시각"이 있다.}와\textbf{ 사건이 얼마나 지속되었는가?}이다. 
+이러한 경우를 정의하기 위해 스스로 되풀이되는 것들을 시간의 표준으로 사용하게 되었다. 이전에는 지구의 자전을 기준으로 맞추어 시간간격을 
+측정하였다. 하지만 극정밀도를 얻기 위해 이후에는 원자시계가 계발되었다. 1967년 개최된 제13차 도량형총회에서는 세슘시계에 기초를 둔 표준 
+초를 다음과 같이 채택하였다.
+
+       \begin{defn}[1초]
+       1초는 세슘-133 원자에서 방출된 특정한 파장의 빛이 \\9,192,631,770번 진동하는데 걸리는 시간이다.
+       \end{defn}
+
+\end{flushleft}
+
+%% 본문시작.
+%% 본문은 companion chapter style로 식자할 것인데,
+%% default를 한 번 부른 이유는 앞서 사용한 demo초
+%% 글꼴 설정에 영향을 받기 때문이다.
+
+%% 제목은 두 줄로 식자하되, heading과 toc에는 개행 없이.
+% \chapter[memoir 클래스에서 한글을 쓰자][memoir 클래스에서...]{memoir
+%   클래스에서\\ 한글을 쓰자} % -> [toc][heading]{title}
+% \chapter[memoir 클래스에서 한글을 쓰자]{memoir 클래스에서\\ 한글을
+%   쓰자} % -> [toc,heading]{title} %% 이 부분이 memoir와 다르다.
+% \chapter{memoir 클래스에서 한글을 쓰자} % {toc,heading,title}
+% \chapter[memoir 클래스에서 한글을 쓰자][memoir 클래스에서
+% 한글...]{memoir 클래스에서\\ 한글을 쓰자}
+% \chapter[memoir 클래스에서 한글...]{memoir 클래스에서\\ 한글을 쓰자}
+% 주의: titleref에 \\ 문자가 들어가면 안된다. titleref에서 사용하는
+% 것은 두번째 옵션인자이므로, 다음과 같이 두번째 옵션 인자를 밝혀줄
+% 것.
+
+\include{뉴턴의 역학법칙.tex}
+\include{뉴턴의 운동법칙 적용.tex}
+\include{실험으로 알아보는 힘의 특성.tex}
+\include{조금 더 복잡한 상황.tex}
+\include{2차원에서의 운동.tex}
+
+\part{에너지와 열현상}
+\pagestyle{MyRuled}
+\include{역학적 에너지.tex}
+% \include{열 에너지.tex}
+
+%% 부록 관련 명령
+%% \appendix 또는 appendices 환경
+%\appendix
+%% 부록 면주에 \hparttitlehead, \hchaptertitlehead 를 표시하지 않는다.
+\def\partmark#1{\markboth{#1}{#1}}
+\def\chaptermark#1{\markright{#1}}
+%
+\AppendixTitleToToc
+\AttachAppendixTitleToSecnum
+%\begin{appendices}
+\appendix
+\appendixpage*
+\renewcommand\thechapter{\Roman{APPchapter}}
+\renewcommand\thesubsection{\thesection.\arabic{APPsubsection}}
+\setcounter{APPchapter}{0}
+\chapterstyle{appendixdefaul교}
+\renewcommand*\prechapternum{\chapnamefont 부록\ \ 제}
+\renewcommand*\postchapternum{\chapnamefont 장}
+\renewcommand*\printchapternum{\chapnumfont\thechapter}
+%% appendix에서는 chaptersyle을 appendixcompanion,
+%% appendixdefault, appendixsection 등으로 지정할 것.
+%% 사용자가 새로운 chapterstyle을 설정하려 할 때는
+%% appendixXXXX 환경을 새로 만들어야 한다.
+%% appendix에서의 절 모양은 \thechapter.\arabic{section}으로
+%% 된다. 이것은 renewcommand할 수 있다터
+
+
+\include{벡터.tex}
+\include{미분과 적분.tex}
+\include{좌표계.tex}
+\include{실험보고서 작성법.tex}
+
+%\restorechapsec \showcommand{restorechapsec}
+%% 만약 appendix가 문서의 가장 끝에 오는 것이 아니라면
+%% 이 명령을 appendix 이후에 실행해준다.
+%% 아래와 같이 appendices 환경을 쓰는 경우에는
+%% 환경을 종료하기만 하면 된다.
+%\end{appendices}
+
+%%% 본문의 끝.
+\backmatter
+\chapterstyle{demo}
+
+%% \bibintoc 하면 참고문헌이 목록에 나온다.
+%% 기본값이므로 별도로 설정할 필요는 없다.
+%\bibintoc
+\renewcommand\prebibhook{}
+\begin{thebibliography}{00}
+\bibitem{Halliday} Halliday\&Walker\&Resnick, "Principles of Physics"
+\bibitem{권재술} 권재술 외 9명, "과학교육론"
+\bibitem{과학기술정보통신부} 과학기술정보통신부, 학국과학창의재단, KAIST 과학영재교육연구원 "AP 일반물리학1 교사용 지도"
+\end{thebibliography}
+
+\indexintoc 
+\renewcommand\preindexhook{%
+  찾아보기는 테스트를 위해서 임의의 단어들로 선정되었다.
+  \bigskip}
+\printindex
+
+%% memoir에서는 \listof... 명령을 아무데나 선언할
+%% 수 있다. 신기하다.
+
+
+\end{document}

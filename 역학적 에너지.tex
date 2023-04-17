@@ -1,0 +1,475 @@
+\chapter{에너지와 열역학}
+\chapterprecis{\noindent 이 장에서는 에너지에 대해 배우고 열현상을 해석한다.}
+
+\begin{flushleft}
+\section{일과 에너지}
+    
+에너지라는 단어는 고대 그리스어 energia에서 en(안, 내부)+ ergon(일) 파생되었다.
+ 기원전 4세기 아리스토텔레스의 기록에서 사용되었고, 
+ 현대의 엄밀한 정의와 달리 에네르게이아는 포괄적인 개념이었다.\footnote{여기서 말하는 것은 "에너지가 넘쳐보인다."와 같은 표현이 넓은 의미의 
+ 에너지로 활기, 행복과 같은 정량적으로 비교가능하지 않는 양을 말한다.}
+
+17세기 후반에 라이프니츠(Gottfried Leibniz)는 공이 벽면에 충돌해서 반대로 이동하는 경우를 집중해보았다. 
+당구공과 같이 공이 충분히 탄성이 있고 벽면이 딱딱하다면 공은 속력이 변하지 않으며 되튀어져 나온다. 
+운동량 보존을 이용한다면,
+공의 속도는 벡터량임으로 되튀어지며 운동량이 2배만큼 변한다. 충돌 된 
+벽면의 질량은 너무 커 벽면과 공의 계의 운동량 보존으로 상황을 분석하기엔 적절하지 않아보인다.
+라이프니츠는 똑같은 속력으로 되튀어 나오는 공의 운동과정
+\footnote{이런 에너지의 손실이 없는 충돌 과정을 특별히 탄성 충돌이라 한다.}에서 
+ \marginpar{
+  \begin{center}
+    \includegraphics[width=4cm]{사진모음/아리스토텔레스.jpg}
+    \captionof{figure}{Aristoteles\\(B.C 384~B.C322)}
+  \end{center}}
+속력의 양으로 표현할만한 보존되는 스칼라 양이 필요하다고 생각했다. 
+
+  %  \marginpar{
+  %     \begin{center}
+  %       \includegraphics[width=5.0cm]{사진모음/에너지/벽과의 충돌.eps}//eps파일은 영어 이름이어야만 한다. 
+  %       \captionof{figure}{벽과의 탄성 충돌}
+  %     \end{center}}
+      
+\begin{figure}[h]
+\centering
+   \includegraphics[width=5cm]{사진모음/에너지/crack.eps}
+   \caption{벽과의 탄성 충돌}
+\end{figure}
+
+라이프니츠는 물체의 질량과 속도의 제곱의 곱으로 나타나는 새로운 스칼라 물리량(vis viva)을 제안했다.  
+이러한 스칼라 물리량은 후대의 과학자들이 다듬어 에너지라는 보존되어지는 양으로 정의했다. 
+보존되어지는 스칼라량이란 마치 계좌에 쌓여있는 돈처럼 지출을 할 수 있지만 
+그 가치의 총량은 변하지 않는 무엇인가로 생각할 수 있다. 이러한 에너지는 다른 형태의 에너지로 전환되지만 그 총량은 변하지 않는다.
+\footnote{이러한 에너지는 최종적으로는 가장 변환하기 힘든 형태인 열에너지로 전환된다.} 
+
+
+
+\subsection{운동에너지}
+\marginpar{
+  \begin{center}
+    \includegraphics[width=4cm]{사진모음/Thomas_Young_(scientist).jpg}
+    \captionof{figure}{Thomas Young\\(1773~1829)}
+  \end{center}}
+1807년에 Thomas Young은 현대적인 의미에서 라이프니츠의 활력(vis viva) 대신에 \\"에너지"라는 용어를 처음으로 사용했다.
+코리올리(Gustave-Gaspard Coriolis)는 1829년에 "운동 에너지"를 현대적인 의미로 설명했다.  
+
+\[
+  \begin{split}
+  F &= m \dv{v}{t}\\
+  \vec{F}\cdot d \vec{x} &= m \textrm{d}v \cdot \dv{\vec{x}}{t}\\
+  \int_{x_i}^{x_f} \vec{F} \cdot \textrm{d} \vec{x} &= 
+  \int_{v_i}^{v_f}m\vec{v} \cdot \textrm{d}\vec{v} = \int_{v_i}^{v_f}mv \textrm{d}v
+  =\frac{1}{2}mv_f^2-\frac{1}{2}mv_i^2
+  \end{split}
+\]
+
+운동에너지 K(kinetic energy)는 물체의 운동상태와 관련된 에너지로 질량 $m$인 물체의 속력 $v$가 광속보다 훨씬 작을 때,
+운동에너지를 다음과 같이 정의한다. \footnote{보다 포괄적인 운동에너지는 상대론의 논리에 따라 정의된다.}
+
+
+\marginpar{
+  \phantom{h}
+  \phantom{h}
+  \begin{flushleft}
+   운동에너지의 단위는 J이다. 더 확장하여 에너지, 열량, 일의 단위도 J이다. 
+   $1 joule=1$J$=1$kg $\cdot$$m^2/s^2$
+  \end{flushleft}}
+
+
+\begin{defn}[운동에너지]
+  \begin{align}
+ &K=\frac{1}{2}mv^2
+\end{align}
+\centering{\textbf{물체의 질량이 클수록 더 빠른 속력을 가질수록 운동에너지가 크다.}}
+\end{defn}
+
+
+
+
+\subsection{일}
+수평 $x$축으로 뻗어있는 마찰 없는 줄을 따라 미끄러지는 물체를 생각해보자. 줄과 각도 $\phi$를 이루는 방향으로 작용하는 일정한 
+힘 $\va{F}$가 물체를 가속시키고 있다. 뉴턴의 제 2법칙에 따라 물체의 운동을 분석한다면 다음과 같이 나타낼 수 있다. 
+
+\begin{figure}[h]
+  \centering
+   \includegraphics[width=5cm]{사진모음/에너지/work.eps}
+   \caption{일-에너지}
+ \end{figure}
+
+ \[
+\begin{split}
+  &F\cos{\phi}= ma_{x}\\
+  &F_{x}=ma_{x}
+\end{split}
+\]
+일정한 힘이 작용하는 등가속도 운동의 상황임으로 등가속도 운동공식을 사용하면 다음과 같이 정리가 가능하다.
+\[
+\begin{split}
+  &v^2={v_0}^2+2a_{x}d\\
+  &\frac{1}{2}mv^2-\frac{1}{2}mv_{0}^2=F_{x}d=F\cos{\phi}d=\va{F}\cdot \va{d}
+\end{split}
+\]
+이를 통해 일정한 \textbf{힘이 작용한 방향과 같은 방향의 변위의 곱만이 운동에너지의 변화와 같음}을 알 수 있다.
+이는 두 벡터의 스칼라곱과 의미가 같다. 즉,
+ \textbf{물체의 에너지를 변화시키는 힘과 그 물체의 변위의 스칼라곱은 에너지를 변화시키고 이를 "일"이라고 한다.} 
+이를 정리하면 다음과 같이 정의할 수 있다.
+
+\begin{defn}[일정한 힘이 한 일]
+  \begin{align}
+ &if \phantom{h}F=const\\
+ &W =\va{F}\cdot \va{d}\\
+ &=K_f-K_i =\frac{1}{2}mv^2-\frac{1}{2}m{v_0}^2
+\end{align}
+\end{defn}
+
+\marginpar{
+  \begin{center}
+    \phantom{a}\\
+    \phantom{a}\\
+    \phantom{a}\\
+    \includegraphics[width=5.5cm]{사진모음/에너지/storm.eps}
+    \captionof{figure}{Task figure}
+  \end{center}}
+
+\begin{task}[일정한 힘이 한 일]
+  \begin{flushleft}
+ 
+  강풍이 부는 와중에 미끄러운 바닥 위의 물체가 $\va{d}=(-2m)\vu{i}$만큼 움직였다. 
+  이때 강풍은 물체에 $\va{F}=(3N)\vu{i}+(-3N)\vu{j}$의 
+  일정한 힘을 
+  지속적으로 작용하고 있다. \\
+  \phantom{h}\\
+  1) 물체의 변위 동안 강풍이 물체에 한 일은 얼마인가?\\
+\indent
+
+  2) 이동하기 시작할 때 나무 짐짝이 10J의 운동에너지를 갖고 있다면 이동이 끝난 후의 운동에너지는 얼마인가?
+
+\end{flushleft}
+\end{task}
+
+
+
+좀 더 일반적인 상황은 힘이 변화하는 경우일 것이다. 상황을 간단히 하기 위해 x축방향으로 작용하는 변화하는 힘과 
+힘이 작용하는 물체를 생각해보자. 물체가 $x_i$에서 $x_f$까지 이동하는 경우에 짧은 구간에 대해서는 힘이 일정하다고 생각할 수 있다.
+그리고 그 짧은 경우들을 더하면 전체 변위동안에 해준 일을 구할 수 있다. 이를 수식으로 전개하면 아래와 같다. 
+
+\[
+\begin{split}
+ &W=\sum\Delta W_j=\sum F_{avg}\Delta x \\
+ &W = \lim_{\Delta x \to 0} \sum F_{avg} \Delta x\\
+ &= \int \; \vec{F} \; \textrm{d}\va{x} 
+\end{split}
+\]
+
+
+\marginpar{
+  \begin{center}
+    \includegraphics[width=5cm]{사진모음/힘과 변위의 적분.png}
+    \captionof{figure}{힘이 한 일은 F-x그래프의 넓이와 같다.}
+  \end{center}}
+
+이는, \textbf{$F-x$ 그래프의 넓이의 의미와 같다.} 따라서 변화하는 힘이 한 일은 확장하여 다음과 같이 정의할 수 있다. 
+
+\begin{defn}[변화하는 힘이 한 일]
+\[ 
+  \textrm{if, F not const}
+\]
+\begin{align}
+ &W =\int_{x_i}^{x_f}\va{F} \cdot d\va x\\
+ &=K_f-K_i
+\end{align}
+
+\end{defn}
+
+
+\marginpar{
+  \begin{center}
+    \phantom{a}\\
+    \phantom{a}\\
+    \phantom{a}\\
+    \includegraphics[width=5.5cm]{사진모음/에너지/transfomating.eps}
+    \captionof{figure}{Task figure }
+  \end{center}}
+
+\begin{task}[변하는 힘이 한 일]
+  \begin{flushleft}
+2kg의 토막이 힘이 가해짐에 따라 마찰이 없는 수평면의 바닥에서 미끄러지면서 $x_1=0$에서 출발하여 $x_3=6m$에서 끝난다. 토막이 움직이면서 힘의 크기는
+그래프와 같이 수평 위치에 따라 변한다. 힘의 방향과 초기속도의 방향은 수평면의 양의 방향으로 같다.
+\phantom{a}\\
+\phantom{a}\\
+\textbf{Q.} $x_1$에서 토막의 운동에너지는 $K_1=36$J이다. $x_1=0, x_2=4.0m, x_3=6m$에서 토막의 속력을 구하여라. 
+\end{flushleft}
+\end{task}
+
+
+\marginpar{
+  \begin{center}
+    \includegraphics[width=5.5cm]{사진모음/힘-변위그래프.png}
+    \captionof{figure}{Task Graph}
+  \end{center}}
+
+
+
+\newpage
+\subsection{퍼텐셜에너지와 역학적 에너지의 보존}
+\subsubsection*{퍼텐셜에너지}
+ 중력을 설명하기 위해 section\ref{sec:gravity}에서 도입했던 던져진 토마토를 다시한번 생각해보자. 토마토가 최고 높이에서 떨어질 때 
+ 중력이 토마토에 한 일은 토마토의 운동에너지의 증가값이 된다. 중력의 방향($\va{F}$)과 변위($\va{s}$)의 방향이 같기 때문이다. 
+ 따라서 운동에너지의 변화는 양이된다.
+하지만 이 때에 지구와 토마토 계에 대해서 에너지는 보존되기를 기대한다. 운동에너지가 증가하는만큼 무엇이 감소했을까? 
+보존을 위해\footnote{보존이라는 개념이 너무 당연하게 들어오는게 거부감 들수도 있다. 실제로 에너지 보존 법칙은 19세기초에나 처음으로 가정되었다. 하지만 만물의 상황에 대한 통찰과 전개는 "보존"과 "대칭"의 아이디어로 생겨났다.} 
+이에 꼭맞는 \textbf{중력이 한일의 크기에 음(-)을 붙여 에너지를 정의하고 이를 퍼텐셜에너지의 변화량으로 정의하여보자.}
+
+\marginpar{
+  \phantom{h}
+  \begin{center}
+  \includegraphics[width=4cm]{사진모음/에너지/tomato.eps}\captionof{figure}{중력을 받는 토마토의 운동}
+  \end{center}} 
+
+  \begin{defn}[중력 퍼텐셜에너지와 퍼텐셜에너지의 정의]
+  \begin{align}
+ & -W_{grv}= \Delta U\\
+ & =- \int_{0}^{h} \va{F}_{grv} \cdot\ d \va{s}\\
+ & = -(-mg)\vu{j} \cdot h\vu{j} =mgh  
+\end{align}
+\centering 
+\textbf{중력이 한일의 음의 값을 중력 퍼텐셜 에너지로 정의한다.}
+\end{defn}
+
+
+\subsubsection{역학적에너지}
+그리고 이러한 퍼텐셜에너지($U$)와 운동에너지($K$)를 합쳐 역학적 에너지($E_{mec}$)라고 정의하여 보자. 
+
+\begin{equation}
+  E_{mec} =K+U
+\end{equation}
+  
+
+그렇다면 
+토마토를 중력이 작용하는 공간에서 수직으로 던졌을 때 에너지 보존을 설명할 수 있다. 
+상승할 때에는 중력이 한일의 역수만큼인 퍼텐셜에너지가 증가하고 이에 따라 운동에너지는 감소한다. 반대로 
+하강할 때에는 운동에너지는 증가하는 반면 꼭 그만큼의 퍼텐셜에너지가 줄어든다. 따라서 운동에너지와 퍼텐셜 에너지의 합은 일정하다. 
+\newpage
+
+\begin{defn}[중력장에서 역학적 에너지의 보존]
+  \begin{align}
+    & W_{grv}=\Delta K ,\qquad -W_{grv}= \Delta U \\
+    & \Delta K = -\Delta U\\
+    & =K_f-K_i= -(U_f-U_i)\\
+    & E_{mec}=K_i+U_i=K_f+U_f
+\end{align}
+\centering
+\textbf{중력장 내에서 계의 역학적에너지는 보존된다.}
+\end{defn}
+
+\subsubsection*{보존력}
+이와 같이 에너지 보존을 위해 도입한 퍼텐셜 에너지는 \textbf{특정한 힘들에 의해서만 정의할 수 있다. 중력과 같은 이러한 힘을 보존력이라고 한다.} 
+\begin{equation}
+  \Delta U =-\int_{x_i}^{x_f} \vec{F_{con}} \cdot \textrm{d}\vec{s}
+\end{equation}
+
+보존력(Conservative Force)이란 힘에 의한 일을 구하였을 때, 그 일의 양이 경로에 무관하고 오직 물체의 처음 위치와 나중 위치에만 의존하는 힘이다. 
+\footnote{보존력에 의한 일은 경로에 무관하므로 위치에만 의존하는 함수의 차로 정의할 수 있고 그런 맥락에서 '위치에너지'라고도 한다.}
+
+\marginpar{
+   \phantom{a}\\
+    \phantom{a}\\
+  \begin{center}
+  \includegraphics[width=5.5cm]{사진모음/훅의 법칙.PNG}\captionof{figure}{훅의 법칙}
+  \end{center}} 
+
+\begin{task}[탄성퍼텐셜 에너지]
+    \begin{flushleft}
+  대표적인 보존력인 탄성력을 이용하여 탄성퍼텐셜에너지를 정의하고 이를 이용하여 보자. 탄성력은 Robert Hooke에 의해서 처음 정의되었다. 
+  \begin{equation}
+    \vec{F_x} = -k\va{x}
+  \end{equation}
+  옆의 그림과 같이 용수철이 늘어나거나 줄어든 변위 x와 힘 F는 항상 방향이 반대이다.\footnote{이러한 맥락에서 탄성력을 복원력이라고도 한다.}
+  그래서 용수철 상수 $k$앞에는 (-)음의 부호가 붙는다. 
+  이때 용수철 상수는 용수철의 탄성을 나타내는 양이다. $k$가 크면 용수철의 탄성이 더 크다. 
+
+    \begin{tasks}[label=(\arabic*)](1)
+      \task 용수철의 탄성 퍼텐셜에너지를 정의하라. \\
+      \task 질량 $m=1$kg의 토막이 마찰없는 수평면을 따라 속력 $2m/s$로 움직이다. 용수철 상수 $20N/m$의 용수철에 부딪혀 용수철을 압축한다. 
+      토막이 용수철에 의해 순간적으로 멈추었을 때 용수철의 압축된 길이 $d$를 구하여라.\\
+   \end{tasks}
+\end{flushleft}
+\end{task}
+
+
+
+보존력이 작용하는 경우에 한해서 우리는 퍼텐셜에너지를 정의하고 역학적 에너지 보존을 사용할 수 있다. 역학적 
+에너지가 보존되지 않는 경우는 비보존력이 작용하는 것이다. 운동마찰력과 공기의 항력은 비보존력이다. 
+예를 들어 마찰이 있는 마루 위에서 토막을 미끄러트려 보자. 미끄러지는 동안 마루가 작용하는 
+마찰력은 토막에 음의 일을 하므로 운동에너지가 줄어든다. 하지만 퍼텐셜에너지의 증가는 없다. \\
+이때의 에너지는 어디로 간 것일까?
+이 에너지들은 열에너지로 전환된다. 물체와 표면이 뜨거워지는 것을 보면 알 수 있다. 이런 경우는 
+역학적 에너지 보존으로 운동을 분석하기 어렵다.
+반대로 보존력만 있는 경우에는 물체의 운동에 관한 어려운 문제들을 매우 간단하게 풀 수 있다. 
+\subsection{외부력이 계에 한 일}
+
+보존력이 한일은 운동에너지를 증가시키지만 위치에너지를 꼭 같이 감소시켜 역학적 에너지를 보존시킨다.
+자, 이제 상황을 확장해보아 일반적인 경우를 보자. 계에 보존력 이외의 외부력이 일을 한다면 
+이는 계의 역학적 에너지를 증가시킨다. 외부력이 해준 일은 상황에 따라 
+운동에너지와 퍼텐셜에너지에 나누어져 역학적 에너지를 증가시킨다. 
+\begin{equation}
+  W=\Delta E_{\textrm{mec}}=\Delta K+\Delta U
+\end{equation}
+
+\begin{task}[외부력]
+  \begin{flushleft}
+질량 $m=10$kg의 포탄을 평균 20000N의 연직방향($\vu{j}$)의 힘으로 변위 $\va{s}=(0.05m) \vu{j}$만큼 폭약이 힘을 주어 
+바닥에서 발사시켰다.  
+    \begin{tasks}[label=(\arabic*)](1)
+      \task 포탄이 올라갈 수 있는 최대 높이는 얼마인가? \\
+      \task 포탄으로부터 6m 높이에 용수철 상수 100N/m의 용수철이 있다면 압축되는 길이는 얼마인가?\\
+   \end{tasks}
+\end{flushleft}
+\end{task}
+
+
+\marginpar{
+  \begin{center}
+  \includegraphics[width=5.5cm]{사진모음/에너지/spring.eps}\captionof{figure}{용수철 에너지 보존 상황}
+  \end{center}} 
+
+
+
+
+하지만 이는 마찰이 없을 때로 국한된다. 마찰이 있는 경우는 역학적 에너지 이외에 열에너지로 전환되는 에너지가 생긴다. 따라서 
+마찰이 포함된 운동의 경우 계에 한일은 다음과 같이 정의된다. 
+
+\begin{equation}
+  W=\Delta E_{\textrm{mec}}+\Delta E_{\textrm{th}}
+\end{equation}
+
+\begin{task}[일, 마찰력]
+  \begin{flushleft}
+사람이 양배추를 담은 전체 질량 $m=10$kg의 나무궤짝을 크기 40N의 일정한 수평력 $F_0\vu{i}$으로 콘크리트 바닥에서 밀고 있다. 
+변위는 $\va{s}=(0.5m) \vu{i}$이고, 궤짝의 속력은 $v_0=4$m/s에서 $v=2$m/s로 감소한다. 
+    \begin{tasks}[label=(\arabic*)](1)
+      \task 힘 $\va{F}$가 한 일은 얼마인가? \\
+      \task 궤짝과 바닥의 열에너지 증가 $\Delta E_{th}$의 크기는 얼마인가?\\
+   \end{tasks}
+\end{flushleft}
+\end{task}
+
+\marginpar{
+  \begin{center}
+  \includegraphics[width=5.5cm]{사진모음/에너지/cabbage.eps}\captionof{figure}{마찰면 상황}
+  \end{center}} 
+
+\subsection{탄성충돌과 비탄성충돌}
+우리가 배운 운동량 보존 법칙과 에너지 보존 법칙을 이용하면 보다 많은 상황을 분석할 수 있다. 
+두 물체가 충돌하는 상황을 가정하자. 외력($\frac{d\vec P}{dt}$)이 0인 경우 운동량 보존에 의해 두 물체의 충돌 전과 충돌 후의 운동량은 보존될 것이다. 
+하지만 운동에너지는 보존되지 않는다. 왜냐하면 보통의 경우에는 운동에너지 이외에 열에너지의 형태로 에너지가 변환되기 때문이다.
+이때에 운동에너지가 보존되는 상황을 탄성충돌 그렇지 않은 상황을 비탄성 충돌이라고 한다. 
+
+
+
+\marginpar{
+  
+  \begin{flushleft}
+   \textbf{Question} 탄성충돌과 비탄성 충돌을 관찰할 때 어떤 차이점이 있을것이라고 예상하는가?
+  \end{flushleft}}
+
+
+\subsubsection{탄성충돌(elastic collision)}
+fig. \ref{Energy collision}\과 같이 두 물체가 충돌하는 경우를 다룬다.
+상황을 간단히 하기 위해 충돌과정은 1차원으로 제한하며 물체 A에 대한 표적(B)이 정지한 경우 ($v_{2i}=0$)를 생각해보자. 
+
+
+모든 입자의 충돌에서 충돌 전후의 운동량은 보존된다. 따라서, 
+\begin{equation} \label{Eq.운동량보존}
+  m_1v_{1i} =m_1v_{1f} +m_2v_{2f} \Rightarrow m_1(v_{1i}-v_{1f})=m_2 v_{2f}
+\end{equation}
+
+탄성충돌은 운동에너지가 보존되는 경우이다. 따라서 역학적 에너지 보존을 적한다.
+
+\begin{equation} \label{Eq.에너지보존}
+  \frac{1}{2} m_1v^2_{1i} =\frac{1}{2}m_1v^2_{1f} +\frac{1}{2}m_2v^2_{2f} 
+  \Rightarrow m_1(v^2_{1i}-v^2_{1f})=m_2v^2_{2f}
+\end{equation}
+
+\marginpar{
+  \begin{center}
+  \includegraphics[width=5.5cm]{사진모음/에너지/twobody.eps}\captionof{figure}{두 물체의 충돌 분석}
+  \label{Energy collision}
+  \end{center}} 
+
+
+Eq \ref{Eq.운동량보존}, \ref{Eq.에너지보존}을 연립하면 다음과 같은 식을 얻는다. 
+\[
+\begin{split} 
+   &m_2v_{2f}(v_{1i} +v_{1f})=m_2v^2_{2f} \rightarrow v_{1i}+v_{1f}=v_{2f}\\
+   &\therefore \phantom{text} m_1(v_{1i}-v_{1f})=m_2(v_{1i}+v_{1f})\\
+\end{split}
+\]
+
+
+
+
+이를 $v_{1f}$와 $v_{2f}$에 대해 정리하면 
+\begin{align} 
+   &v_{1f} =\frac{m_1-m_2}{m_1+m_2} v_{1i} \\
+   &v_{2f}=\frac{2m_1}{m_1+m_2}v_{1i}  
+\end{align}
+
+\begin{task}[탄성충돌]
+  \begin{flushleft}
+  1차원에서 물체1이 정지해있던 물체2에 $\vec{v_{1i}}\vu{i}$의 속도로 충돌하는 경우를 생각해보자. 충돌이 탄성충돌이라 할 때 
+  아래의 물음에 답하시오. \\
+  \phantom{h}\\
+  1) 물체1과 물체2의 질량이 같은 경우($m_1=m_2$), $v_{1f}$와 $v_{2f}$를 구하여라.\\
+\indent
+
+  2) 물체2의 질량이 많이 큰 경우($m_2 \gg m_1$), $v_{1f}$와 $v_{2f}$를 구하여라. \\
+  \indent
+
+  3) 물체1의 질량이 많이 큰 경우($m_1 \gg m_2$), $v_{1f}$와 $v_{2f}$를 구하여라. 
+
+\end{flushleft}
+\end{task}
+
+\begin{task}[탄성충돌 예시문항]
+  \begin{flushleft}
+  2m/s의 속력으로 움직이는 물체 A($m_1=1$kg)가 반대 방향, 같은 속력으로 움직이는 물체 B($m_2=0.5$kg)와 탄성충돌을 하였다.
+  충돌 후 각각의 속력을 구하시오.\\
+\end{flushleft}
+\end{task}
+
+\subsubsection{비탄성충돌(inelastic collision)}
+충돌과정에서 계에 작용하는 외력이 없는 상황에서 운동량은 보존된다. 하지만 운동에너지는 비보존력에 의해 열에너지로 손실되면
+보존되지 않는다. 따라서 자연에서 일어나는 대부분의 거시적 충돌은 비탄성 충돌이다. 특별히, 
+충돌 후 물체가 하나로 합쳐지는 경우를
+\textbf{완전비탄성 충돌}이라고 한다. 
+
+\[
+\begin{split} 
+   &\va{p}_{1i}+\va{p}_{2i} =m_1\va{v}_{1i}+m_2\va{v}_{2i}=(m_1+m_2)\va{v}_f 
+\end{split}
+\]
+
+완전 비탄성 충돌 후 물체의 운동은 질량중심의 운동과 일치한다.
+
+\[
+\begin{split} 
+   &\va{v}_{cm}=\frac{m_1\va{v}_{1i}+m_2\va{v}_{2i}}{(m_1+m_2)}
+\end{split}
+\]
+
+
+\begin{task}[비탄성충돌 탄동진자]
+  \begin{flushleft}
+  질량 M=1kg인 나무로 만든 탄동 진자에 질량 m=0.01kg 인 탄이 $v$의 속력으로 날아와 박혔더니, 이 진자가 높이 $h=0.5$m만큼 올라간
+  후, 잠시 멈추고 처음 위치로 내려왔다. 탄환의 속력 $v$를 구하시오. (단, 줄의 질량과 공기마찰은 무시하고 
+  계산기를 이용하여 해결한다.)
+\end{flushleft}
+\end{task}
+
+\marginpar{
+  \begin{center}
+  \includegraphics[width=5.5cm]{사진모음/에너지/pendlum.eps}\captionof{figure}{탄동진자}
+  \label{Energy collision}
+  \end{center}} 
+
+\end{flushleft}

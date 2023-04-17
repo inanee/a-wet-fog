@@ -1,0 +1,151 @@
+\section{뉴턴의 운동법칙 적용}
+
+우리 주변에 있는 상황을 분석하며 뉴턴의 역학법칙을 적용해보고 거대한 통찰력을 느껴보자.
+
+\subsection{지표면에서의 자유낙하운동과 만유인력의 법칙}\label{sec:gravity}
+간단한 상황인 "자유낙하" 상황을 고려해보자. section \ref{sec:힘}에서 배웠듯이 힘은 4가지 상호작용만 있고 
+우리가 다루는 대부분의 경우 중력과 전자기력 두 가지 경우에서 분석이 끝난다. 
+이 경우에는 커다란 지구가 당기는 만유인력 즉, 중력만이 작용하는 경우라고 할 수 있다. 
+
+행성들의 움직임을 설명하고자 뉴턴은 질량을 가진 물체가 서로 당기는 힘인 만유인력을 다음과 같이 정의하였다. 
+
+\marginpar{
+  \begin{center}
+  \includegraphics[width=4cm]{Isac Newton.jpg}\captionof{figure}{Isac Newton(1642-1727)}
+  \end{center}} 
+  
+
+    \begin{defn}[뉴턴의 만유인력의 법칙]
+
+       \centering{\IfFileExists{law of universal gravity.png}
+  {\includegraphics[width=0.4\linewidth]{law of universal gravity.png}
+  \captionof{figure}{만유인력}\label{fig:law of universal gravity}}%
+  {\rule{\linewidth}{4cm}}}
+
+
+
+    \begin{equation}\label{eq:universal gravity}
+     \overrightarrow{F}_{grv}= \overrightarrow{F_{1}}= -\overrightarrow{F_{2}}
+      =-\frac{Gm_1m_2}{r^2}\vu{r}  \footnote{단위벡터 $\vu{r}$에 대해서는 부록의 극좌표계를 보고오자.}
+    \end{equation}
+
+  \begin{itemize}
+    \item  $\overrightarrow{F}_{grv}$: 두 질량간의 힘
+    \item G: 중력상수($=6.67\cross 10^{-11} N m^2/kg^2$)
+    \item $m_1$: 첫번째 물체의 질량
+    \item $m_2$: 두번째 물체의 질량
+    \item  r= 두 점질량간의 거리 
+    \item  $\vu{r}$ = 두 물체의 중심을 이은 위치벡터로 서로 당기는 방향이다. 
+  \end{itemize}
+  
+  \end{defn}
+
+
+
+
+
+  자 이제 토마토를 초기속력 ($v_0$)으로 연직 위로 던졌다가 토마토를 던진 위치에서 
+받는 경우에 토마토에 작용하는 힘을 자유물체도로 표현해보자.
+\clearpage
+
+\centering{
+\begin{figure}[h]
+  \centering
+   \includegraphics[width=3cm]{자유낙하 토마토.png}
+   \caption{자유낙하하는 물체의 free-diagram}\label{fig:free-diagram(tomato)}
+ \end{figure}}
+ 
+ \begin{flushleft}
+ 자유낙하하는 토마토는 만유인력을 나타내는 Eq. \ref{eq:universal gravity}와 뉴턴의 운동 법칙에 따라 힘을 받는다.
+    \begin{equation}
+        -\frac{GM_{E}m_{t}}{R^2}\vu{r}=m_{t}\va{a}
+    \end{equation}
+\marginpar{
+  \begin{center}
+  \includegraphics[width=4cm]{사진모음/지구반지름.jpg}\captionof{figure}{지구반지름}
+  \end{center}} 
+  
+
+    
+    이 때에 두 질량간의 거리(R)는 지구 중심과 토마토간의 거리이다. 토마토가 3m 정도에서 떨어진다고하면 이것은 지구의 반지름($R_E=$6400km)보다 훨씬 작다. 그래서
+우리가 관심있는 지표면에서의 자유낙하 상황에서는 힘을 일정히 볼 수 있다.
+    \begin{equation}
+        -\frac{GM_{E}m_{t}}{R^2}\vu{r}\approx {-\frac{GM_{E}m_{t}}{R_{E}^2}}\vu{r} 
+    \end{equation}
+
+    \begin{equation}
+      m_{t}({-\frac{GM_{E}}{R_{E}^2}}) =m_{t}\va{a} =-m_{t}g \vu{j}
+    \end{equation}
+     이러한 경우 뉴턴의 제2 운동법칙에 따라 
+ 가속도가 일정하고 이러한 상황을 특별한 경우로 \textbf{등가속도 운동}이라고 한다.
+    이 때에 자유낙하하는 물체의 가속도 g($9.8m/s^2$)를 중력가속도라고 한다.
+    
+    \subsection{등가속도 운동}
+    등가속도 운동의 경우를 분석하여 보자. 이것은 속도와 가속도에 대해 정의한 Eq.\ref{def:acceleration}로 부터 시작한다. 
+    가속도가 일정할 때는 순간가속도와 평균가속도가 같으며 이를 다음과 같이 쓸 수 있다. 
+    
+    \begin{equation}
+      a =\frac{v-v_0}{t-0}
+    \end{equation}
+      여기서 $v_0$는 시간 t=0에서의 속도이고 $v$는 이후의 시간 t에서의 속도이다. 이것은 다음과 같이 표기할 수 있다.
+    \begin{equation}
+      v=v_0+at\label{eq:등가속도 운동1}
+    \end{equation}
+같은 맥락으로 다음의 식을 유도할 수 있다. 
+\begin{align}
+      &v_{avg} =\frac{x-x_0}{t-0}\\
+      &x=x_0+v_{avg}t\\
+      &v_{avg}=\frac{1}{2}(v_0+v)\\
+      &x-x_0=v_0t+\frac{1}{2}at^2\label{eq:등가속도 운동2}
+\end{align}
+Eq. \ref{eq:등가속도 운동1}과 \ref{eq:등가속도 운동2}을 연립하여 시간변수를 없애 등가속도 운동에서 주로 사용하는 식 3가지를 유도할 수 있다. 
+\begin{defn}[등가속도 운동공식]
+    \begin{align}\label{eq:등가속도 운동공식}
+     &v=v_0+at\\
+     &s=v_0t+\frac{1}{2}at^2\\
+     &2as=v^2-v^2_{0}
+    \end{align}
+  \end{defn}
+ 이때에 s는 이동거리를 뜻하며 1차원의 등가속도 운동을 다루기 때문에 이는 변위의 크기 $x-x_0$와 값이 같다. 
+ 이외의 물리량들도 방향을 포함하지 않으며 양과 음의 값으로 다루기만 한다.
+이러한 등가속도 운동공식의 문자들을 함수로하여 위치-시간, 속도-시간, 가속도-시간 관계를 그래프로 표현하면 다음과 같다. 
+\footnote{유용한 수학적 도구인 미분과 적분을 이용하면 가속도 운동을 분석하는데 도움이 된다. 부록에서 학습하여 보자.}
+
+\begin{figure}[h]
+  \centering
+   \includegraphics[width=15cm]{사진모음/등가속도 운동.PNG}
+   \caption{등가속도 운동 그래프} \label{fig:free-fallig}
+ \end{figure}
+\clearpage
+
+\begin{task}
+지면에서 연직 방향으로 질량 100g의 물체를 $39.2m/s$의 속도로 던져 올렸다. 5초 후 이 물체의 속도와 높이를 구하시오. (단, 공기 저항이 없고, 
+$g=9.8m/s^2$이다. )
+
+\end{task}
+
+
+  \begin{task}[도르래(pully)]
+ \begin{flushleft}
+  {\IfFileExists{사진모음/연습3.png}
+  {\includegraphics[width=0.4\linewidth]{사진모음/연습3.png}
+  \label{fig:도르래상황}}%
+  {\rule{\linewidth}{4cm}}}
+ \end{flushleft}
+ \textbf{팽팽한 줄의 장력은 같은 줄에서 어느 위치에서든 같다.} \\만약 위치에 따라 장력이 다르면 어떤 일이 일어날까?
+\end{task}
+
+
+  \begin{task}[도르래(pully)-2]
+ \begin{flushleft}
+  {\IfFileExists{사진모음/도르래 연습.png}
+  {\includegraphics[width=0.4\linewidth]{사진모음/도르래 연습.png}
+  \label{fig:도르래상황2}}%
+  {\rule{\linewidth}{4cm}}}
+ \end{flushleft}
+ \textbf{1) A의 가속도의 크기는?\\ 2) 실이 A를 당기는 힘은?\\3) B가 정지상태에서 5초간 이동한 거리는? } \\
+ (단, 중력가속도의 크기는 $10m/s^2$이다.)
+\end{task}
+
+
+\end{flushleft}

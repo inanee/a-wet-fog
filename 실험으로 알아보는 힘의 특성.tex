@@ -1,0 +1,271 @@
+
+\section{실험으로 알아보는 힘의 특성}
+\begin{flushleft}
+이번 section의 concept들은 아래의 실험을 재료로 설명할 것이다. 아래의 실험 과정을 수행하여보고 
+머릿속에 실험장면과 데이터를 있는 그대로 받아들여보자. 
+ 
+
+\marginpar{
+  \begin{center}
+  \includegraphics[width=5.5cm]{스마트카트 동영상 설명자료.png}
+  \captionof{figure}{YouTube : Pasco smartcart 검색}
+  \end{center}} 
+
+\begin{exper}{ \Large {수레의 분열 실험} }
+
+  \label{exp:Momentum}
+
+  \begin{enumerate}
+  \item 준비물 : 역학용 스마트 카트, 수레 멈춤용 막대, 레일, 추(200g), 파스코 소프트웨어와 PC
+  \footnote{실험전에 충분히 파스코 실험기기의 사용법을 익혀두자.}\\
+
+
+\item 실험 방법 : 
+
+  \IfFileExists{운동량 보존 실험.PNG}
+  {\includegraphics[width=0.8\linewidth]{운동량 보존 실험.PNG}
+  \captionof{figure}{실험 장면}\label{fig:Momentum}}%
+  {\rule{\linewidth}{4cm}}%
+
+
+  \begin{enumerate}
+    \item 스마트카트와 CAPSTONE 프로그램을 연결하여 스마트 카트의 물리량을 컴퓨터로 확인한다.
+    \item 레일 정중앙에 스마트 카트를 압축시켜 놓는다.
+    \item 카트의 운동에 영향을 주지 않도록 조심하여 두 카트를 분열시킨다. 이 때 분열되어 힘을 받아 생성된 초기 수레의 최대 속도를 
+    소프트웨어로 측정하고 기록한다.
+    \item 두 카트의 질량(조작변인)을 달리하며 위의 과정을 반복한다. 질량과 분열속도의 곱-운동량(종속변인)을 표로 정리한다.
+    \item 분열될때에 두 카트의 시간-속도 그래프를 보고서에 첨부한다.
+  \end{enumerate}
+
+  
+  \phantom{dh}3. 실험해석 
+  \begin{enumerate}
+    \item 분열하는 도중에 보존되는 양이 있는가? 그 물리량은 무엇인가?
+    \item 왜 보존된다고 생각하는가?
+    \item 위의 해석을 통해 질량을 어떻게도 정의할 수 있겠는가?
+  \end{enumerate}
+
+\end{enumerate}
+\end{exper}
+
+
+\subsection{운동량(momentum)}
+
+
+갈릴레이와 뉴턴 사이에는 데카르트라는 현인이 있었다. 그는 갈릴레이와 같이 한 물질은 자신의 운동상태를 
+지속하려는 경향 '관성'을 갖는다고 생각하였다. 따라서 물체의 운동에서 보존되는 양으로 운동량의 개념을 생각해내었다. 
+이후 뉴턴은 수학적으로 더 엄밀하게 운동량을 그 물체의 질량과 속도벡터를 곱한것으로 다음과 같이 정의하였다. 
+
+\marginpar{
+  \begin{center}
+  \includegraphics[width=4cm]{Decartes.jpg}\captionof{figure}{Decaretes(1596-1650)}
+  \end{center}} 
+
+
+  \begin{defn}[운동량]
+
+\begin{equation}
+  \va{p} = m\va{v}
+\end{equation}
+운동량은 속도벡터에 질량이 배수된 \textbf{벡터}임으로 계산에 주의해야 한다.  
+
+  \end{defn}
+
+\marginpar{
+  \begin{flushleft}
+   운동량의 단위는 kg$\cdot$m/s, 또는 N$\cdot$s 이다. 
+   $1$kg$\cdot$m/s=1N$\cdot$s 
+  \end{flushleft}}
+
+\noindent
+
+
+
+\subsection{운동량과 힘의 관계(뉴턴의 제2 운동법칙)}
+  
+Eq. \titleref{eq:newton's law 2}($\vec{F}_{net}=m\vec{a}$)을 참고하여 실험 \ref{exp:Momentum}을 분석하여 보자. 
+수레가 서로 용수철로 묵여 있을 때부터 두 수례를 하나의 계로 생각해보자.
+ 분열하는 순간에 두 수레로 이루어진 계에 작용하는 외력 $\vec{F}_{ext}$은\footnote{힘을 서술할 때 주어와 목적어 모두가 
+계의 성분이라면 그것은 내력이다. 예를 들어 수레 A가 수레 B를 미는 힘은 수레A,B가 계의 성분임으로 내력이다.} 없다. 이에 의해 
+계의 운동상태의 변화는 없어야 한다. 이전에 우리는 운동상태의 변화를 물체의 가속도로 두었으나 
+이제는 가속도가 두 수레에 대해 존재하므로 대표할만한 가속도가 없다. 그렇다면 그 순간 계에 변하지 않은 운동상태의 변화를 대변하는 양은 무엇일까? \\
+데카르트가 도입한 운동량을 사용하여 보자. 실험 \ref{exp:Momentum}에서 벡터로 이루어진 운동량 벡터의 전체합은 0이었다.
+\begin{equation}
+  m_1\va{v}_{1i}+m_2\va{v}_{2i}=m_1\va{v}_{1f}+m_2\va{v}_{2f}=0
+\end{equation}
+
+
+
+\textbf{외력이 없는 경우 두 개의 입자로 이루어진 계의 분열에서 변하지 않은 값은 바로 선운동량이다.}
+\footnote{추후에 회전운동에는 병진운동의 운동량과 구분되는
+각운동량이 등장한다. 따라서 이를 구분하기 위해 선운동량(linear momentum)이라고 한다.}
+가속도를 운동상태의 변화로 두었던 우리의 생각을 확장하여 여러 입자로 이루어진 계에 대해 운동량 변화를 
+운동상태의 변화로 확장시킬 수 있다. 
+\marginpar{
+  \begin{center}
+  \includegraphics[width=4.0cm]{사진모음/운동량/수레의 분열.png}\captionof{figure}{두 수레 계에 작용하는 외력은 없다.}
+  \end{center}} 
+
+    \begin{defn}
+      \centering{\textbf{선운동량의 시간변화율은 입자에 작용하는 알짜힘과 같다.}} 
+    \begin{equation}\label{eq:newton's law 3}
+      \vec{F}_{net}
+      =\frac{\Delta \sum \vec{p}_{net}}{\Delta t}=\dv{\vec{p}_{net}}{t}
+    \end{equation}
+  \end{defn}
+  
+   $\va{p}=m\va{v}$으로 정의하므로 Eq. \ref{eq:newton's law 3}는 우리가 익히 사용하는 $\va{F} =m\va{a}$를 포함함을 알 수 있다.
+  하지만 로켓과 같이 질량이 변하며 운동하는 물체의 운동을 분석할 때에는 외력이 없는데 로켓이 나아가는 것을 설명할 수 없다.
+  이런경우엔 Eq. \ref{eq:newton's law 3}을 활용해야만 한다. 한마디로 더 넓은 경우에 대해서 설명해주는 더 범용적인 Eq.라고 할 수 있다. 
+  실제 뉴턴이 집필한 프린키피아에도 Eq. \ref{eq:newton's law 3}의 식으로 적혀있는것을 이후의 과학자들이 $\va{F} =m\va{a}$로 
+  변형한것이다.  
+  \marginpar{
+  \begin{center}
+  \includegraphics[width=4.0cm]{사진모음/로켓.jpg}\captionof{figure}{로켓의 추진}
+  \end{center}} 
+
+  \noindent 
+  수레의 분열 상황과 같이 \textbf{충돌, 분열 등 2개 이상의 물체로 이루어진 계에 작용하는 외력이 0일 때
+   계의 운동량 변화가 없이 보존되는 것을 "운동량 보존법칙"}이라고 한다. 
+
+   \begin{task}[운동량 보존법칙]
+    
+  \begin{flushleft}
+     수평면에 정지해 있는 물체 B를 향해 물체 A가 $4v$의 속력으로 등속 직선 운동하고있다. 그래프는 A와 B가 충돌한 이후부터 
+     B의 위치를 시간에 따라 나타낸 것이다. A와 B의 질량은 2kg으로 같다. A와 B는 충돌한 후 붙어서 함께 운동하며, 2초일 때 벽과 
+     충돌 후 반대 방향으로 함께 운동한다. 각 질문에 답하여라. 
+  
+ \begin{tasks}[label=(\arabic*)](1)
+      \task 속력 $v$의 값을 구하시오. \\
+      \task A의 1초부터 6초까지 운동량 변화량을 구하시오.\\
+   \end{tasks}
+    
+ \end{flushleft}
+\end{task}
+\end{flushleft}
+
+\marginpar{
+  \begin{center}
+  \includegraphics[width=5.5cm]{사진모음/운동량/시간위치 그래프.png}\captionof{figure}{위치-시간 그래프}
+  \end{center}} 
+
+
+
+
+\subsection{운동량과 충격량(Impulse)}
+
+\begin{flushleft}
+  
+Eq. \ref{eq:newton's law 3}에 따라서 우리는 한가지 물리량을 정의할 수 있다. 한 공이 힘을 받는 단순한 경우는 다른 
+공과 충돌한 경우이다. 공이 받는 힘 $\vec{F}(t)$는 충돌하는 동안 변하면서 공의 선운동량 $\vec{p}$를 바꾼다. 이 것은 Eq. \ref{eq:newton's law 3}
+에 따라서 다음과 같이 쓸 수 있다. 
+
+\marginpar{
+  \begin{center}
+  \includegraphics[width=4.0cm]{사진모음/운동량/공의 충돌.png}\captionof{figure}{충돌}
+  \end{center}} 
+
+
+\begin{equation}
+  d\vec{p}=\vec{F}(t)dt
+\end{equation}
+
+충돌 직적의 시각 $t_i$부터 충돌 직후의 시각 $t_f$까지 위의 식을 정적분 해주면 다음과 같이 표기할 수 있다. 
+
+\begin{equation}
+  \int_{t_i}^{t_f} d\vec{p}= \int_{t_i}^{t_f} \vec{F}(t)dt
+\end{equation}
+이 식의 좌측항 $\vec{p}_f-\vec{p}_i= \Delta\vec{p}$ 선운동량의 변화량을 뜻하고 오른쪽 항을 충격량이라고 부른다. 충격량은 
+충격력과 시간간격의 곱으로 이를 정의 하면 아래와 같다. 
+
+\begin{defn}[충격량의 정의]
+  \begin{align}
+ &I = \int_{t_i}^{t_f}\vec{F}(t)dt\\
+ & \textrm{if}, \phantom{o} F=\textrm{const},\phantom{o}I=F \Delta t
+\end{align}
+\centering{\textbf{선운동량의 변화량은 물체에 가해지는 충격량과 같다.}}
+\end{defn}
+이를 기하학적인 그래프로 확장하면 $\vec{F}(t)$의 함수를 시간 변수에 대해 적분하면 충격량(Impulse) $\vec{I}$을 구할 수 있다.
+따라서 적분의 기하학적 의미에 따라 F-t그래프에서 그래프 개형과 t축 사이의 넓이를 구한다면 충격량을 알 수 있다. 
+
+\marginpar{
+  \begin{center}
+  \includegraphics[width=4.5cm]{사진모음/운동량/F-t 그래프.png}\captionof{figure}{F-t 그래프의 넓이는 충격량과 같다.}
+  \end{center}} 
+\end{flushleft}
+
+\begin{task}[운동량 충격량 관계]
+    
+  \begin{flushleft}
+      호수 위에서 질량이 다른($m, 2m$)의 두 보트 A,B가 일정한 바람의 힘($F$)을 받아 움직인다. 
+      두 보트가 정지 상태에서 출발하여 
+      거리 $L$만큼 떨어진 선착장에 도착하였다. 어느 보트가 더 큰 운동량을 갖고 선착장에 도착하는가? 단, 모든 마찰력은 무시하고 가능한한
+      정량적으로 비교하여보라.
+ \end{flushleft}
+\end{task}
+
+   
+\subsection{작용-반작용(뉴턴의 제3 운동법칙)}
+
+\begin{flushleft}
+힘의 특성을 파악하기 위해 분열하는 두 수레의 실험 상황을 들여다보자.
+
+분열되는 두 수레의 계에는 외력이 0이므로 두 수레의 전체 운동량이 보존된다. 
+\begin{equation}
+  m_1 \va{v_1} +m_2 \va{v_2} =0      \Rightarrow   m_1 \va{v_1} =-m_2 \va{v_2}
+\end{equation}
+이것은 Eq.\ref{eq:newton's law 3}에 따라 아래와 같이 전개 수 있다.\footnote{운동량 보존과 작용-반작용 법칙은 맥이 같다.}
+\marginpar{
+  \begin{center}
+  \includegraphics[width=4cm]{분열.png}\captionof{figure}{분열}
+  \end{center}} 
+
+\begin{equation}
+  \dv{(m_1 \va{v_1})}{t} =-\dv{(m_2 \va{v_2})}{t} 
+\end{equation}
+
+\begin{equation}
+  \vec{F}_{21}=-\vec{F}_{12}
+\end{equation}
+좌변항은 물체1이 계인 경우로 물체2로부터 받는 힘을 나타내고, 우변항은 물체2가 1로부터 받는 힘이다. 
+이 두 힘은 크기가 정확히 갖고 방향이 반대이다.
+
+이것이 바로 뉴턴의 제3 운동법칙 작용-반작용 법칙이다. 작용과 반작용에 해당하는 힘의 서술은 힘을 주는 주어와 힘이 작용하는 
+목적어가 서로 상호교환 하면 된다. 예를 들어 \textbf{물체 1이 물체 2를 미는 힘의 반작용은 물체 2가 물체 1을 미는힘이 된다.}
+이때 주의할 점은 작용 반작용 관계에 있는 힘들은 서로 다른 물체에 작용하여 서로 상쇄되지 않는다. 
+\textbf{한 물체에 서로다른 방향의 같은 힘이 작용하여 정지해있는 힘의 평형과 잘 구분하여야 한다.}
+\newpage
+\begin{task}[object on a horizontal object]
+  \begin{flushleft}
+    {\IfFileExists{사진모음/운동방정식/reactioan_task.eps}
+    {\includegraphics[width=0.6\linewidth]{사진모음/운동방정식/reactioan_task.eps}
+  \label{fig:물체옆의물체}}%
+    {\rule{\linewidth}{4cm}}}
+   \end{flushleft}
+\end{task}
+
+
+
+\subsection{뉴턴의 운동법칙}
+이제까지 뉴턴 이전의 현인들의 생각을 알아보고 간단한 실험을 진행했다. 이를 통해 최종적으로 필자가 말하고자 한것은 
+3가지로 축약가능한 뉴턴의 운동법칙이다. 이를 정리하면 아래와 같다. 
+
+
+\begin{defn}[뉴턴의 3가지 운동법칙]
+  \begin{enumerate}
+  \item First motion law : 계에 외부력이 작용하지 않으면($\sum \overrightarrow{F_{ext}} = 0$) 계는 운동상태를 유지한다. 이것을 \textbf{관성법칙}이라고 한다.
+  \item Second motion law: $\sum \overrightarrow{F_{ext}} \neq 0$이고 $\Delta m =0$ 이라면   $\overrightarrow{F_{net}}
+      =\dv{\overrightarrow{p_{net}}}{t} =\dv{m \va{v}}{t}= m\va{a}$ 이것을 \textbf{가속도 법칙}이라고 한다.
+  \item Third motion law: 힘은 상호작용으로 물체쌍 사이에서 일어나고 서로에게 작용하는 힘은 같은 크기로 반대방향이다. 
+  ($\overrightarrow{F_{21}}=-\overrightarrow{F_{12}}$) 이를 \textbf{작용-반작용 법칙}이라고 한다.
+\end{enumerate}
+\end{defn}
+
+이 3가지 운동법칙은 역학의 문제 상황에 예외없이 적용되는 명제들이다. 
+이러한 예외없음이 비약적인 과학발전을 일으켰고 주변 물체들의 운동에 대한 이해를 인간에게 갖고 왔다. 
+뉴턴의 운동법칙으로 시작되는 고전역학의 정립을
+과학혁명이라고 말하는 이유도 여기에 있다. \footnote{물리학에는 
+너무나 많은 문자들이 등장한다. 이 문자들은 물리량을 추상적으로 표현하며 [m]미터와 같은 단위와는 그 의미가 다르다. 
+"물리학 문자게임"을 통해 다양한 문자의 의미를 정확히 알고 친숙해져보자.} 
+
+\end{flushleft}

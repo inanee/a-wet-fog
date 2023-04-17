@@ -1,0 +1,283 @@
+
+\pagestyle{hangul}
+\chapter{수학적 도구들}\label{chap:math in physics}
+\chapterprecis{부록에서는 물리학의 논리를 엄밀하게 펼치기 위한 수학에 대해서 설명한다.}
+\ResetHangulspace{1.333}{1.2}
+\paragraphfootnotes
+
+\section{벡터의 성분과 표현}\label{sec:appsec}
+\begin{flushleft}
+온도와 같은 \textbf{스칼라}\footnote{스칼라 물리량의 대표적인 예는 온도, 압력, 에너지, 질량, 시간 등이 있으며, 
+이들은 방향성이 없다.}는 크기만 있다. 이들은 단위를 가진 숫자로 나타내고, 일반적인 산술과 대수의 규칙을 따른다.
+크기와 방향 둘 다 필요한 물리량을 기술하려면 새로운 수학언어인 \textbf{벡터}\footnote{벡터 물리량의 예로는 변위, 
+속도, 가속도, 운동량 등이 있다.}가 필요하다. 예를들면 힘, 자기력, 전기장과 같은 물리량을 기술하는데 벡터는 필수적이다. 
+가장 간단한 경우의 벡터량은 변위로서 위치의 변화가 변위\footnote{위치는 기준점에 따라 달라진다. 
+하지만 변위벡터는 기준점과 관계없이 변화량만 다루기 때문에 기준이 필요치 않아 유용하다. 이러한 관계는 시각과 시간의 차이와 유사하다.}
+이다. 이러한 \textbf{벡터는 크기와 방향을 갖는다.}
+입자의 위치가 $A$에서 $B$로 변한다면 그림과 같이 변위벡터를
+화살표로 나타낼 수 있다. 이 때 벡터는 문자의 위에 화살표($\vec{AB}$) 를 붙여 표현하며 화살표의 길이로 벡터의 크기를 표현한다.
+중요한 사실 중 하나는 \textbf{벡터는 크기와 방향이 변하지 않는한 동일한 벡터라는 것}이다. 
+벡터는 시작점의 정보를 갖지 않는다는 것은 오래도록 곱씹을 만한 내용이다.  
+
+\begin{figure}[h]
+     \centering
+     \begin{subfigure}[h]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{사진모음/벡터의 표현.jpg}
+         \caption{벡터의 화살표 표현}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[h]{0.5\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{벡터의 동등.PNG}
+         \caption{벡터의 동등}
+      \end{subfigure}
+        \caption{벡터의 표현과 동등}
+\end{figure}
+하지만, 이러한 표현은 기하학적인 표현만 할 수 있기 때문에 보다 정밀하게 좌표계를 이용한 성분표현을 할 수 있다면 좋을것 같다.
+그럴려면 \textbf{단위벡터}를 도입해야한다. 단위벡터는 크기가 1이며 특정한 방향을 갖는 벡터이다. 단위벡터를 사용하는 목적은 
+벡터의 방향을 나타내기 위한 것이다. 우리가 주로 다루는 직각좌표계(cartesian coordinate)에서 x,y,z축 양의 방향을 향하는 단위벡터를 각각 \
+$\vu{i},\vu{j},\vu{k} $\footnote{다른 서적에서는 $\vu{x},\vu{y},\vu{z} $로 표기하기도 하며 단위벡터에는 
+모자기호($\vu{\quad}$)를 붙여준다.}으로 표기한다. 단위벡터는 다른 벡터들을 표기할 때 유용하다. 예컨데 그림의 벡터 $\va{A}$
+를 다음과 같이 나타낼 수 있다. 
+\begin{figure}[h]
+ \centering
+  \includegraphics[width=5cm]{벡터의 성분표현.PNG}
+  \caption{벡터의 성분 표현}\label{벡터의 성분표현}
+\end{figure}
+
+\begin{equation}
+  \va{A} = \va{A_x}+\va{A_y} =A_x\vu{i}+A_y\vu{j} =4\vu{i}+3\vu{j}\footnote{($A_x,A_y$)=(4,3)로 표현하기도 하니 
+  알아두자. 이 때 벡터의 크기는 화살표의 길이로 $\abs{\va{A}}=A=\sqrt{A_x^2+A_y^2}=5 $이다.  }
+\end{equation}
+
+위의 그림 \ref{벡터의 성분표현}에서 $A_x\vu{i}, A_y\vu{j}$는 벡터로서 벡터성분이라고 한다. 이 벡터의 성분은
+직관적으로 알 수 있듯 각 좌표축에 벡터를 투영시킨것으로 x축과 벡터가 이루는 각도를 $\theta$라고 할 때, 
+\begin{equation}
+  A_x=A\cos\theta, A_y=A\sin\theta
+\end{equation}
+
+  로 표기할 수 있다. $A_x,A_y$는 스칼라로서 벡터 $\va{A}$의 스칼라성분이라 한다. 
+
+
+
+
+  \begin{task}
+공항을 떠난 비행기가 공항에서 설정한 직교좌표계의 양의 y축방향에서 30도만큼 양의 x축 방향으로 기운만큼 공항으로부터 200km를 날아갔다.
+비행기의 변위벡터를 (cartesian coordinate)로 표현하고, 그 변위벡터의 단위방향벡터를 구하시오.   
+
+\end{task}
+\end{flushleft}
+
+
+
+
+
+
+
+\begin{flushleft}
+  
+
+
+\subsection{벡터의 덧셈}
+벡터는 벡터만의 연산규칙이 있다. 화살표를 이용한 기하학적인 벡터의 연산규칙과 성분을 이용한 벡터의 계산의 연산규칙은 동등하다. 
+일반적으로 전문적이고 정량적인 분석을 하기위해서는 성분을 이용한 벡터의 계산에 익숙해질 필요가 있다. 
+벡터의 성분에 대해서는 위의 section에서 배웠으니 벡터의 덧셈과 뺄셈은 직관적으로 이해하기 쉬울것이다. 
+하지만 벡터의 곱셈은 스칼라곱과 벡터곱으로 나뉘어져 있다. 
+example을 풀고 이 문서가 참조한 Halliday의 일반물리학 예제 연습하기를 추천한다. 
+
+벡터의 덧셈에는 기학학적인 뎃셈과 성분을 이용한 덧셈이 있다.
+
+
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[h]{0.4\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{벡터의 합.PNG}
+      \caption{$\va{c}=\va{a}+\va{b}$}
+      \label{그림A}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[h]{0.4\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{벡터의 합2.PNG}
+      \caption{ $(\va{a}+\va{b})+\va{c}=\va{a}+(\va{b}+\va{c})$ }
+      \label{그림B}
+   \end{subfigure}
+     \caption{벡터의 기하학적인 합}
+  \end{figure}
+
+ 그림 \ref{그림A}은 $\va{a}, \va{b}$가 더해져 $\va{c}$가 되는것을 나타낸다. 더하고자하는 벡터의 머리와 꼬리를 이어 합을 
+ 만들수가 있다. 벡터의 기하학적인 합은 다음과 같은 벡터방정식으로 표기할 수 있다.
+  \begin{equation}
+  \va{c}=\va{a}+\va{b}  
+\end{equation}
+그림 \ref{그림A}을 보면 다음의 특성을 보인다. 덧셈순서와 무관하다. 
+  \begin{equation}
+\va{a}+\va{b}=\va{b}+\va{a}   
+\end{equation}
+\noindent 둘째, \ref{그림B}를 보면, 두 개 이상의 벡터들을 어떤 순서로도 더할 수 있다. 
+\begin{equation}
+  (\va{a}+\va{b})+\va{c}=\va{a}+(\va{b}+\va{c}) 
+\end{equation}
+
+벡터의 덧셈은 교환법칙과 결합법칙을 만족한다.
+
+
+
+  벡터 성분으로 벡터 더하기는 이보다 직관적으로 이해하기 쉽다.
+
+
+ \begin{align}
+  & \va{c}= \va{a}+\va{b} \\
+  & \va{a}= a_x\vu{i}+a_y\vu{j}+a_z\vu{k} \\
+  & \va{b}= b_x\vu{i}+b_y\vu{j}+b_z\vu{k} 
+   \end{align}
+
+  일때, 
+  \begin{align}
+    &\va{c}= (a_x\vu{i}+a_y\vu{j}+a_z\vu{k}) + (b_x\vu{i}+b_y\vu{j}+b_z\vu{k}) \\
+    &= (a_x+b_x)\vu{i}+(a_y+b_y)\vu{j}+(a_z+b_z)\vu{k}
+    \end{align}
+벡터의 더하기와 빼기는 같은 성분끼리 더하거나 빼주면 되어 간단하다. 
+\newpage
+
+
+
+  \begin{task}
+
+1)변위 $\va{a}$와 $\va{b}$의 크기가 각각 3m와 4m이며, $\va{c}=\va{a}+\va{b}$이다. 
+변위 $\va{a}$와 $\va{b}$의 가능한 방향을 모두 고려할 때, $\va{c}$의 최대크기와 최소크기를 구하시오.\\
+\phantom{text}\\
+\phantom{text}\\
+\phantom{text}\\
+\phantom{text}\\
+2)다음에 제시된 벡터들의 합을 표시하시오.\\
+\phantom{text}\\
+
+    \centering{
+    {\IfFileExists{사진모음/벡터의 합성.png}
+    {\includegraphics[width=0.6\linewidth]{사진모음/벡터의 합성.png}
+  \label{fig:벡터화살표 합성}}%
+    {\rule{\linewidth}{4cm}}}
+    }
+
+    \phantom{text}\\
+    \phantom{text}\\
+    \phantom{text}\\
+
+\begin{flushleft}
+3)벡터 $\va{A}= 2\vu{i}-3\vu{j}+6\vu{k}$와 $\va{B}= \vu{i}+2\vu{j}-3\vu{k}$ 가 있다. 다음을 구하라.
+    \\
+    \begin{tasks}[label=(\arabic*)](1)
+      \task $A+B$ \\
+      \task $\abs{\va{A}+\va{B}}$\\
+      \task $2\vec{A}-3\vec{B}$  \\
+   \end{tasks}
+  \end{flushleft}
+
+  \end{task}
+
+\subsection{벡터의 곱셈}
+
+벡터 곱하기는 세 가지 방법이 있으며 보통의 대수 곱하기와는 전혀 다르다. 그 세가지는 
+\begin{itemize}
+\item 벡터에 스칼라 곱하기
+\item 스칼라곱 
+\item 벡터곱 
+\end{itemize}
+으로 나눌 수 있다. 
+
+벡터에 스칼라 곱하기는 간단하다. 
+벡터 $\va{a}$ 스칼라 s를 곱하는 것은 벡터 $\va{a}$의 크기에 s의 절대값을 곱한값으로 $s\va{a}$로 나타내며 방향은 
+s의 부호에 따라 s가 양이면 같은 방향 음이면 반대방향을 가리키게 된다. 
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{벡터의 실수배.PNG}
+  \caption{벡터의 실수배}
+\end{figure}
+
+\subsubsection{스칼라곱}
+두 벡터 $\va{a}, \va{b}$의 스칼라곱은 $\va{a}\vdot\va{b}$로 표기하고 다음과 같이 정의한다. 
+\begin{equation}
+  \va{a}\vdot\va{b}=ab\cos\theta
+\end{equation}
+이 때 $\theta$는 벡터 $\va{a}$의 방향과 $\va{b}$의 방향 사이의 각도이다. \textbf{우변은 스칼라값들뿐이므로 이를 벡터의 스칼라곱
+점곱이라고 한다.} 성분을 강조하면 다음과 같이 표기할 수 있다. 
+\begin{equation}
+  \begin{split}
+    \va{a}\vdot\va{b}&= (a_x\vu{i}+a_y\vu{j}+a_z\vu{k}) \vdot (b_x\vu{i}+b_y\vu{j}+b_z\vu{k}) 
+  \\& = (a_x b_x)+(a_y b_y)+ (a_z b_z)
+  \end{split}
+\end{equation}
+
+\begin{task}
+두 벡터 $\va{a}=3.0\vu{i}-4.0\vu{j}$와 $\va{b}=2.0\vu{i}-3.0\vu{k}$의 사이각 $\theta$의 cos값을 구하시오.
+
+\end{task}
+
+
+
+
+\subsubsection{벡터곱} 
+  두 벡터 $\va{a}, \va{b}$의 벡터곱은 $\va{a}\cp\va{b}$로 표기하고 그 크기는 다음과 같이 정의한다. 
+\begin{equation}
+  \abs{\va{a}\cp\va{b}}=ab\sin\theta
+\end{equation}
+이 때 $\theta$는 벡터 $\va{a}$의 방향과 $\va{b}$의 방향 사이의 작은 각도이다. 이 때 스칼라곱과 큰 차이점이 있다.
+\textbf{우변은 벡터값이므로 방향이 있다. 이 방향은 $\va{a},\va{b}$
+가 이루는 평면에 수직이며 구체적으로는 그림                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \ref{오른손규칙}의 오른손 규칙을 따른다.\footnote{오른손 법칙은 "벡터곱을 외자" 활동을 통해 익혀보자.}}
+ 따라서 벡터곱은 두 벡터의 순서가 중요하다. 
+\marginpar{
+  \begin{center}
+  \includegraphics[width=4cm]{오른손법칙.png}\captionof{figure}{오른손 규칙}\label{오른손규칙}
+  \end{center}} 
+
+\begin{equation}
+  (\va{a}\cp\va{b})=  -(\va{b}\cp\va{a})
+\end{equation}
+
+따라서 벡터곱에서는 교환법칙이 성립하지 않는다.
+성분을 이용하려면 단위벡터간의 벡터곱을 알아야한다. 
+
+\begin{equation}
+  \begin{split}
+    \va{i}\cp\va{j}=\va{k}=-\va{j}\cp\va{i}
+  \end{split}
+\end{equation}
+
+\marginpar{
+  \begin{center}
+  \includegraphics[width=4cm]{단위벡터의 외적.png}\captionof{figure}{단위벡터의 외적}
+  \end{center}} 
+
+
+이를 알고 두 벡터의 벡터곱을 성분별로 표현하면 아래와 같다.
+\begin{equation}
+  \begin{split}
+    \va{a}\cp\va{b}&= (a_y b_z-b_y a_z)\vu{i}+(a_z b_x - b_z a_x)\vu{j}+(a_x
+    b_y-b_x a_y)\vu{k} 
+  \end{split}
+\end{equation}
+
+백터곱은 비교적 복잡하므로 행렬식을 이용한 방법을 익히는 것을 추천한다. 
+
+
+
+\begin{task}
+물리학에서 지레의 회전중심에서 회전팔에 힘이 작용하는 지점까지의 크기와 방향을 $\va{r}$, 회전팔에 작용하는 힘의 
+크기와 방향을 $\va{F}$로 나타낼 때, 지레가 받는 돌림힘을 다음과 같이 정의한다. 
+\begin{equation}
+  \vec{\tau}= \va{r} \cross \va{F} [N\cdot m]
+\end{equation} 
+
+지레의 회전팔이 y-z 평면에서 회전가능하며 $\va{r} =4\vu{j}+3\vu{k},  \va{F} =-5\vu{i} -3\vu{j}$ 일 때 지레가 받는
+돌림힘의 벡터를 구하시오. 
+\end{task}
+\end{flushleft}
+
+\marginpar{
+  \begin{center}
+  \includegraphics[width=5cm]{사진모음/돌림힘_1.jpg}\captionof{figure}{돌림힘}\label{돌림힘}
+  \end{center}} 
